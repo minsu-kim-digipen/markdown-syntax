@@ -40,6 +40,8 @@
 ###### This is a H6
 ####### This is a H7(지원하지 않음)
 
+:star:2까지는 github에서 보았을때 줄이 쳐져있습니다!
+
 ## 2.2. BlockQuote
 이메일에서 사용하는 ```>``` 블럭인용문자를 이용한다.
 ```
@@ -50,13 +52,6 @@
 > This is a first blockqute.
 >	> This is a second blockqute.
 >	>	> This is a third blockqute.
-
-이 안에서는 다른 마크다운 요소를 포함할 수 있다.
-> ### This is a H3
-> * List
->	```
->	code
->	```
 
 ## 2.3. 목록
 ### ● 순서있는 목록(번호)
