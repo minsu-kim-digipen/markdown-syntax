@@ -1,26 +1,3 @@
-[공통] 마크다운 markdown 작성법
-======================
-
-# 1. 마크다운에 관하여
-## 1.1. 마크다운이란?
-[**Markdown**](http://whatismarkdown.com/)은 텍스트 기반의 마크업언어로 2004년 존그루버에 의해 만들어졌으며 쉽게 쓰고 읽을 수 있으며 HTML로 변환이 가능하다. 특수기호와 문자를 이용한 매우 간단한 구조의 문법을 사용하여 웹에서도 보다 빠르게 컨텐츠를 작성하고 보다 직관적으로 인식할 수 있다.
-마크다운이 최근 각광받기 시작한 이유는 깃헙([https://github.com](https://github.com)) 덕분이다. 깃헙의 저장소Repository에 관한 정보를 기록하는 README.md는 깃헙을 사용하는 사람이라면 누구나 가장 먼저 접하게 되는 마크다운 문서였다. 마크다운을 통해서 설치방법, 소스코드 설명, 이슈 등을 간단하게 기록하고 가독성을 높일 수 있다는 강점이 부각되면서 점점 여러 곳으로 퍼져가게 된다.
-
-## 1.2. 마크다운의 장-단점
-### 1.2.1. 장점
-	1. 간결하다.
-	2. 별도의 도구없이 작성가능하다.
-	3. 다양한 형태로 변환이 가능하다.
-	4. 텍스트(Text)로 저장되기 때문에 용량이 적어 보관이 용이하다.
-	5. 텍스트파일이기 때문에 버전관리시스템을 이용하여 변경이력을 관리할 수 있다.
-	6. 지원하는 프로그램과 플랫폼이 다양하다.
-
-### 1.2.2. 단점
-	1. 표준이 없다.
-	2. 표준이 없기 때문에 도구에 따라서 변환방식이나 생성물이 다르다.
-	3. 모든 HTML 마크업을 대신하지 못한다.
-
-****
 # 2. 마크다운 사용법(문법)
 ## 2.1. 헤더Headers
 * 글머리: 1~6까지만 지원
@@ -60,22 +37,16 @@
 1. 첫번째
 2. 두번째
 3. 세번째
+    1. 3-1
+    2. 3-2
+(탭을 두번 눌러 띄워진 상태)
 ```
 1. 첫번째
 2. 두번째
 3. 세번째
+    1. 3-1
+    2. 3-2
 
-**현재까지는 어떤 번호를 입력해도 순서는 내림차순으로 정의된다.**
-```
-1. 첫번째
-3. 세번째
-2. 두번째
-```
-1. 첫번째
-3. 세번째
-2. 두번째
-
-딱히 개선될 것 같지는 않다. 존 그루버가 신경안쓰고 있다고...
 
 ### ● 순서없는 목록(글머리 기호: `*`, `+`, `-` 지원)
 ```
@@ -118,116 +89,23 @@
       + 4단계
 
 ## 2.4. 코드
-4개의 공백 또는 하나의 탭으로 들여쓰기를 만나면 변환되기 시작하여 들여쓰지 않은 행을 만날때까지 변환이 계속된다.
+```
+텍스트 내용안의 시작부분에 ```
+끝 부분에 ```가 들어있으면 코드처럼 보이게 된다.
+```
 
 ### 2.4.1. 들여쓰기
 ```
-This is a normal paragraph:
-
-    This is a code block.
-    
-end code block.
+내용 안에 \ (역슬래시)를 넣거나
+한칸 들여쓰기로 비워 놓으면 적용됩니다.
 ```
 
-실제로 적용해보면,
+First line with backslash \
+Second line
 
-적용예:
+First line with tap
 
-*****
-This is a normal paragraph:
-
-    This is a code block.
-
-end code block.
-*****
-
-> 한줄 띄어쓰지 않으면 인식이 제대로 안되는 문제가 발생합니다.
-
-```
-This is a normal paragraph:
-    This is a code block.
-end code block.
-```
-
-적용예:
-
-*****
-This is a normal paragraph:
-    This is a code block.
-end code block.
-*****
-
-### 2.4.1. 코드블럭
-코드블럭은 다음과 같이 2가지 방식을 사용할 수 있습니다:
-
-* `<pre><code>{code}</code></pre>` 이용방식
-
-```
-<pre>
-<code>
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-
-}
-</code>
-</pre>
-```
-
-<pre>
-<code>
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-</code>
-</pre>
-
-* 코드블럭코드("\```") 을 이용하는 방법
-
-<pre>
-<code>
-```
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-</code>
-</pre>
-
-```
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-
-**깃헙**에서는 코드블럭코드("\```") 시작점에 사용하는 언어를 선언하여 [문법강조(Syntax highlighting)](https://docs.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks#syntax-highlighting)이 가능하다.
-
-<pre>
-<code>
-```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
-</code>
-</pre>
-
-```java
-public class BootSpringBootApplication {
-  public static void main(String[] args) {
-    System.out.println("Hello, Honeymon");
-  }
-}
-```
+  Second line
 
 
 ## 2.5. 수평선 ```<hr/>```
@@ -261,14 +139,12 @@ public class BootSpringBootApplication {
 * 참조링크
 
 ```
-[link keyword][id]
+[text][url]
 
-[id]: URL "Optional Title here"
+Link : [Google][googlelink]
 
-// code
-Link: [Google][googlelink]
+[googlelink] : https://google.com "Go google"
 
-[googlelink]: https://google.com "Go google"
 ```
 
 Link: [Google][googlelink]
